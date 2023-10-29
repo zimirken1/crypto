@@ -18,3 +18,8 @@ export interface ICryptResponse {
     timestamp: number;
 }
 
+export interface ISingleCryptResponse {
+    data: ICrypt;
+    timestamp: number;
+}
+

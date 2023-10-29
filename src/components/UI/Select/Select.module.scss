@@ -1,0 +1,44 @@
+.select {
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+  position: relative;
+
+  &::after {
+    content: "\25BC";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.8rem;
+  }
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  &:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+    color: #888;
+    &::after {
+      color: #888;
+    }
+  }
+
+  &:hover {
+    border-color: #aaa;
+  }
+}

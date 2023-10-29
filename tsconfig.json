@@ -6,6 +6,10 @@
       "dom.iterable",
       "esnext"
     ],
+    "include": [
+      "src/**/*",
+      "typings.d.ts"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +22,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
   "include": [
-    "src"
+    "src",
+    "typings.d.ts"
   ]
 }
