@@ -1,0 +1,83 @@
+.navbar {
+  margin: 2vh;
+  font-size: 1rem;
+  width: 98vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem 2rem 3rem;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+
+  @media only screen and (max-width: 1024px) {
+    font-size: 2.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .cryptos {
+    display: flex;
+    align-items: center;
+
+    .crypto {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      position: relative;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 70%;
+        width: 1px;
+        background-color: #ecf0f1;
+      }
+
+      strong {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    font-size: 2rem;
+    flex-direction: column;
+    align-items: start;
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    .cryptos {
+      flex-direction: column;
+
+      .crypto {
+        padding: 0.25rem 0;
+
+        &:not(:last-child)::after {
+          right: auto;
+          left: 0;
+          top: 100%;
+          height: 1px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

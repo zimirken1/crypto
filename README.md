@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+# Cryptocurrencies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### *Задание #1*
+#### Создайте страницу, на которой будет отображаться таблица с информацией о различных монетах криптовалюты.
+#### Ваша таблица должна включать следующие столбцы:
+1. Символ монеты (например, `BTC`, `ETH`)
+2. Логотип монеты
+3. Цена в `USD`
+4. Рыночная капитализация в `USD`
+5. Изменение цены за 24 часа в процентах
+6. Столбец для кнопки Add для добавления монеты в портфель пользователя
 
-## Available Scripts
+### *Задание #2*
+#### Создайте страницу, на которой будет отображаться подробная информация об отдельной монете криптовалюты. Переход на эту страницу осуществляется при клике на строку монеты в таблице.
 
-In the project directory, you can run:
+#### Ваша страница должна включать следующую информацию:
+1. Изображение монеты
+2. Название монеты
+3. Символ монеты
+4. `rank`
+5. `Supply`
+6. Цена в `USD`
+7. Рыночная капитализация в `USD`
+8. `maxSupply`
+9. График изменения цены за день/7 дней/месяц - через выбор опции
+10. Кнопка для Add добавления этой монеты в портфель пользователя
+11. Кнопка вернуться назад для переход к Таблице
 
-### `npm start`
+### *Задание #3*
+#### В Header приложения отображается курс трех популярных криптовалют. Этот блок содержит информацию о цене каждой криптовалюты в `USD`. Отдельный блок справа стоимость портфеля пользователя и разница с изначальной стоимостью портфеля, в скобках разница в процентах.Example: 134,32 `USD` +2,38 (1,80 %). При клике на этот блок открывается модальное окно где пользователь видит весь список своих монет, может удалять их из списка.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+`git clone https://github.com/zimirken1/crypto.git`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
 
-### `npm run build`
+`cd your-repository`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the application:
 
-### `npm run eject`
+`npm start`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The application will be accessible at `http://localhost:3000`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Demo: ``
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

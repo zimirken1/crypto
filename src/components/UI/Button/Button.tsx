@@ -1,28 +1,44 @@
 import React from 'react';
-import styles from './Button.module.scss'
+import styles from './Button.module.scss';
 
 interface ButtonProps {
     text: string;
     type?: 'button' | 'submit' | 'reset';
-    onClick?: () => void | undefined;
+    onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     className?: string;
     disabled?: boolean;
     icon?: JSX.Element;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, type = 'button', onClick, className, disabled, icon }) => {
+const Button: React.FC<ButtonProps> = ({
+    text,
+    type = 'button',
+    onClick,
+    className,
+    disabled,
+    icon,
+}) => {
+    const handleClick = (
+        e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    ) => {
+        e.stopPropagation();
+
+        if (onClick) {
+            onClick(e);
+        }
+    };
+
     return (
         <button
             type={type}
-            onClick={onClick}
+            onClick={handleClick}
             className={`${styles.btn} ${className}`}
             disabled={disabled}
         >
-            {icon && <span className="btn-icon">{icon}</span>}
+            {icon && <span className={styles['btn-icon']}>{icon}</span>}
             {text}
         </button>
     );
-}
+};
 
 export default Button;
-

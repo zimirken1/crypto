@@ -16,13 +16,13 @@ interface SelectProps {
 }
 
 const Select: React.FC<SelectProps> = ({
-                                           options,
-                                           value,
-                                           onChange,
-                                           placeholder,
-                                           className,
-                                           disabled
-                                       }) => {
+    options,
+    value,
+    onChange,
+    placeholder,
+    className,
+    disabled,
+}) => {
     return (
         <select
             value={value}
@@ -31,13 +31,13 @@ const Select: React.FC<SelectProps> = ({
             disabled={disabled}
         >
             {placeholder && <option value="">{placeholder}</option>}
-            {options.map(option => (
+            {options.map((option) => (
                 <option key={option.value} value={option.value}>
                     {option.label}
                 </option>
             ))}
         </select>
     );
-}
+};
 
 export default Select;

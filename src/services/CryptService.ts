@@ -1,14 +1,17 @@
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
-import {ICryptResponse, ISingleCryptResponse} from "../models/ICrypt";
-import {IHistoryResponse} from "../models/IHistory";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
+import { ICryptResponse, ISingleCryptResponse } from '../models/ICrypt';
+import { IHistoryResponse } from '../models/IHistory';
 
 export const cryptAPI = createApi({
     reducerPath: 'cryptAPI',
-    baseQuery: fetchBaseQuery({baseUrl: 'https://api.coincap.io'}),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://api.coincap.io' }),
     tagTypes: ['Crypt'],
     endpoints: (build) => ({
-        getCryptocurrencies: build.query<ICryptResponse, { limit: number, offset: number, search?: string }>({
-            query: ({ limit = 10, offset = 0, search}) => {
+        getCryptocurrencies: build.query<
+            ICryptResponse,
+            { limit: number; offset: number; search?: string }
+        >({
+            query: ({ limit = 10, offset = 0, search }) => {
                 let params: any = {
                     limit: limit,
                     offset: offset,
@@ -23,29 +26,49 @@ export const cryptAPI = createApi({
                     params: params,
                 };
             },
-            providesTags: result => ['Crypt']
+            providesTags: (result) => ['Crypt'],
         }),
-        getSingleCryptocurrency: build.query<ISingleCryptResponse, { id: string }>({
+        getSingleCryptocurrency: build.query<
+            ISingleCryptResponse,
+            { id: string }
+        >({
             query: ({ id }) => `v2/assets/${id}`,
-            providesTags: result => ['Crypt']
+            providesTags: (result) => ['Crypt'],
         }),
-        getCryptocurrencyHistory: build.query<IHistoryResponse, {
-            id: string,
-            interval: string,
-            start: string,
-            end: string
-        }>({
+        getCryptocurrencyHistory: build.query<
+            IHistoryResponse,
+            {
+                id: string;
+                interval: string;
+                start: string;
+                end: string;
+            }
+        >({
             query: ({ id, interval, start, end }) => {
                 return {
                     url: `v2/assets/${id}/history`,
                     params: {
                         interval: interval,
                         start: start,
-                        end: end
-                    }
+                        end: end,
+                    },
                 };
             },
-            providesTags: result => ['Crypt']
-        })
-    })
+            providesTags: (result) => ['Crypt'],
+        }),
+        getMultipleCryptocurrencies: build.query<
+            ICryptResponse,
+            { ids: string }
+        >({
+            query: ({ ids }) => {
+                return {
+                    url: `v2/assets`,
+                    params: {
+                        ids: ids,
+                    },
+                };
+            },
+            providesTags: (result) => ['Crypt'],
+        }),
+    }),
 });

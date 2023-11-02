@@ -1,0 +1,15 @@
+.container {
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2vh;
+
+  @media (max-width: 1024px) {
+    width: 100vw;
+    flex-direction: column;
+    gap: 1vh;
+    padding: 0;
+  }
+}
